@@ -1,0 +1,33 @@
+def solicitar_pais():
+    """Solicita al usuario ingresar el nombre de un país."""
+    return input("Ingresa el nombre de un país: ").strip()
+
+def determinar_continente(pais):
+    """Determina el continente en el que se encuentra el país."""
+    paises_continentes = {
+        "Argentina": "América del Sur",
+        "Brasil": "América del Sur",
+        "Canadá": "América del Norte",
+        "España": "Europa",
+        "Alemania": "Europa",
+        "China": "Asia",
+        "Japón": "Asia",
+        "Australia": "Oceanía",
+        "Sudáfrica": "África",
+        "Egipto": "África"
+    }
+    pais = pais.title()
+
+    if pais in paises_continentes:
+        return paises_continentes[pais]
+    else:
+        return "Continente desconocido"
+
+def main():
+    """Función principal del programa."""
+    pais = solicitar_pais()
+    continente = determinar_continente(pais)
+    print(f"El país {pais} se encuentra en {continente}.")
+
+if __name__ == "__main__":
+    main()
